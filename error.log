@@ -1,0 +1,40 @@
+[2025-06-12 09:23:14] ERROR: Pod `payment-service-748d6c4b95-2kfh9` failed to start due to CrashLoopBackOff
+Reason: `java.lang.NullPointerException` in PaymentProcessor.java:42
+Cluster: prod-us-west-2
+Node: ip-10-0-34-7.ec2.internal
+Namespace: production
+
+[2025-06-12 09:23:17] WARN: CPU usage for `orders-service` container at 95% for over 5 minutes
+Recommendation: Consider scaling deployment or optimizing code
+
+[2025-06-12 09:23:19] ERROR: GitHub Actions pipeline failed for `feature/cart-upgrade`
+Job: `build-and-deploy.yml`
+Step: `Run Unit Tests`
+Message: `Tests failed: CartTest.java:58 -> Expected true but got false`
+
+[2025-06-12 09:23:22] ALERT: AWS ALB Health Check failed for target group `prod-payment-tg`
+Instance: i-0c9e3df7a12ef347a
+HTTP Code: 500 (Internal Server Error)
+
+[2025-06-12 09:23:26] ERROR: Docker image push failed
+Registry: ghcr.io/org/payment-service
+Reason: `denied: permission_denied`
+Suggestion: Check GitHub PAT or DockerHub token permissions
+
+[2025-06-12 09:23:30] CRITICAL: Redis connection timed out in `cart-service`
+Service URL: redis://cache.internal:6379
+Stacktrace: `ConnectionTimeoutException` at RedisClient.java:104
+
+[2025-06-12 09:23:33] INFO: Rolling back Kubernetes deployment `frontend-ui` due to failed readiness probe
+Previous revision: frontend-ui:v2.1.3
+Current failed revision: frontend-ui:v2.2.0
+
+[2025-06-12 09:23:35] ERROR: Slack alert webhook failed to send incident notification
+HTTP 403 - Forbidden
+Endpoint: https://hooks.slack.com/services/...
+
+[2025-06-12 09:23:39] ALERT: 3 failed SSH login attempts detected on bastion host
+Source IP: 185.244.25.109
+Time: 09:23:37
+Recommendation: Block IP via security group or fail2ban
+
